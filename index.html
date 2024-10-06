@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelers Truly</title>
+    <link rel="icon" type="image/png" href="Just logo.svg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000060;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 3px 3px;
+            padding: 3px; /* Increased padding for better spacing */
+            background-color: #fffbe6;
+            border-radius: 3px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                max-width: 600px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .container {
+                max-width: 800px;
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            .container {
+                max-width: 1000px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        a:hover .logo {
+            transform: scale(1.05); /* Slightly enlarge the image on hover */
+            opacity: 0.8; /* Slightly reduce opacity on hover */
+        }
+
+        .logo {
+            width: 50%;
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px; /* Adjusted margin for better spacing */
+            animation: bounce 0.5s ease forwards;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .business-name {
+            font-size: 39px;
+            font-weight: bold;
+            color: #000060;
+            margin: 5px 0; /* Adjusted margin */
+            animation: fadeInLeft 0.7s ease forwards;
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .contact-links a {
+            font-size: 22px; /* Inherit the font size from the parent element */
+            color: inherit; /* Inherit the color from the parent element */
+            vertical-align: middle; /* Align with icons if present */
+        }
+
+        .contact-info {
+            font-size: 22px; /* Adjusted font size */
+            color: #000060;
+            margin-bottom: 3px; /* Consistent spacing for contact info */
+            animation: fadeInRight 0.7s ease forwards;
+        }
+
+        .icon.logoaddress {
+            width: 20px; /* Adjust this value to make the icon smaller */
+            height: auto; /* Maintain the aspect ratio */
+            vertical-align: middle; /* Ensure it aligns properly with text */
+            margin-right: 3px; /* Adjust margin if needed */
+        }
+
+        .icon {
+            width: 22px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
+
+        a {
+            color: #000060;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ff6600;
+        }
+
+        .social-icons {
+            margin: 20px;
+        }
+
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .logo {
+                width: 60%;
+                max-width: 100px;
+            }
+
+            .business-name {
+                font-size: 36px;
+            }
+
+            .name, .contact-info {
+                font-size: 30px;
+            }
+        }
+
+        /* Adjust paragraph spacing */
+        p {
+            margin: 3px 0; /* Adjust this value to reduce spacing between paragraphs */
+        }
+
+        .hover-effect {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png" alt="Jewelers Truly Logo" class="logo">
+        <p class="business-name">Jewelers Truly</p>
+        <p>
+            At Jewelers Truly, we manufacture and custome make:
+        </p>
+        <p>
+            Engagement rings, Eternity ban, Tennis bracelets, Necklaces and Pedants
+        </p>
+        <p>
+            We carry both natural and lab-created diamonds
+        </p>
+        <p>
+            Contact us for more info
+        </p>
+        <div class="contact-links">
+            <!-- WhatsApp link -->
+            <a href="https://api.whatsapp.com/send/?phone=16464641935&text&type=phone_number&app_absent=0" target="_blank" class="hover-effect">
+                <img src="https://secure-info.github.io/Moshe/logowhatsapp.png" alt="WhatsApp Icon" class="icon">
+            </a>
+            <!-- Phone call link -->
+            <a href="tel:+16464641935" class="hover-effect">
+                +1(646) 464-1935
+            </a>
+            <p class="contact-info">
+                <img src="https://secure-info.github.io/Moshe/logoaddress.png" alt="Map Icon" class="icon logoadress"> 58 W 47th Street, New York, NY
+            </p>
+            <p class="contact-info">
+                <img src="https://secure-info.github.io/Moshe/logoemail.png" alt="Email Icon" class="icon">
+                <a href="mailto:info@JewelersTruly.com" class="hover-effect">info@JewelersTruly.com</a>
+            </p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/jewelers-truy/" class="hover-effect"><img src="https://secure-info.github.io/Moshe/logolinkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/jewelers_truly/" class="hover-effect"><img src="https://secure-info.github.io/Moshe/logoinsta.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1" class="hover-effect"><img src="https://secure-info.github.io/Moshe/logotiktak.png" alt="TikTok"></a>
+            </div>
+            <div>
+                <script type="text/javascript" src="https://4cs.gia.edu/interactive-4cs/js/embed.js" charset="UTF-8"></script>
+            </div>
+            <script>
+                document.querySelectorAll('.hover-effect').forEach(item => {
+                    item.addEventListener('click', event => {
+                        event.target.style.transform = 'scale(1.1)';
+                        setTimeout(() => {
+                            event.target.style.transform = 'scale(1)';
+                        }, 200);
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+
