@@ -2,15 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jewelers Truly</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
 
-    <link rel="icon" type="image/png" href="Just logo.svg">
+    <title>Jewelers Truly | Custom Fine Jewelry & Diamonds</title>
+
+    <meta
+        name="description"
+        content="Jewelers Truly creates custom fine jewelry including engagement rings, eternity bands, tennis bracelets, necklaces and pendants with natural and lab-grown diamonds."
+    >
+
+    <meta name="theme-color" content="#080811">
+
+    <meta property="og:title" content="Jewelers Truly">
+    <meta
+        property="og:description"
+        content="Custom fine jewelry. Natural and lab-grown diamonds. Made for you."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jewelerstruly.com/">
+    <meta
+        property="og:image"
+        content="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png"
+    >
 
     <style>
-        * {
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #000060;
+            --navy-soft: #11116f;
+            --ink: #080811;
+            --cream: #fbf8ee;
+            --cream-2: #f3edde;
+            --white: #ffffff;
+            --gold: #c4a45f;
+            --gold-light: #ead8a1;
+            --muted: #6f6e76;
+            --border: rgba(196, 164, 95, 0.28);
+            --shadow: 0 28px 80px rgba(0, 0, 0, 0.14);
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: Arial, Helvetica, sans-serif;
         }
 
         html {
@@ -18,699 +67,2644 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            padding: 0;
-            background: #ffffff;
-            color: #000060;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
+            font-family: var(--sans);
+            background: var(--cream);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        .container {
-            position: relative;
-            width: calc(100% - 16px);
-            max-width: 600px;
-            margin: 8px auto;
-            padding: 22px 14px 18px;
-            background: #fffbe6;
-            border-radius: 8px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-            text-align: center;
-            overflow: hidden;
-            animation: pageFade 0.9s ease forwards;
+        img,
+        svg,
+        canvas {
+            display: block;
         }
 
-        @keyframes pageFade {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container canvas {
-            pointer-events: none;
-        }
-
-        .content {
-            position: relative;
-            z-index: 3;
-        }
-
-        .logo {
-            width: 120px;
-            max-width: 35%;
-            height: auto;
-            margin-bottom: 4px;
-            animation: logoDrop 0.8s ease forwards;
-            transition:
-                transform 0.35s ease,
-                opacity 0.35s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.06);
-            opacity: 0.9;
-        }
-
-        @keyframes logoDrop {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px) scale(0.95);
-            }
-
-            70% {
-                transform: translateY(3px) scale(1.02);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .business-name {
-            font-size: clamp(30px, 7vw, 42px);
-            line-height: 1.1;
-            font-weight: 700;
-            color: #000060;
-            margin: 5px 0 14px;
-            animation: titleReveal 0.9s ease forwards;
-        }
-
-        @keyframes titleReveal {
-            from {
-                opacity: 0;
-                transform: translateY(14px);
-                letter-spacing: 4px;
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                letter-spacing: normal;
-            }
-        }
-
-        .description {
-            font-size: clamp(16px, 4vw, 19px);
-            line-height: 1.45;
-            margin: 5px 0;
-            opacity: 0;
-            animation: textFade 0.7s ease forwards;
-        }
-
-        .description:nth-of-type(2) {
-            animation-delay: 0.15s;
-        }
-
-        .description:nth-of-type(3) {
-            animation-delay: 0.30s;
-        }
-
-        .description:nth-of-type(4) {
-            animation-delay: 0.45s;
-        }
-
-        @keyframes textFade {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .contact-heading {
-            font-size: clamp(17px, 4vw, 20px);
-            font-weight: 600;
-            margin: 15px 0 9px;
-        }
-
-        .contact-info {
-            font-size: clamp(17px, 4.2vw, 21px);
-            line-height: 1.4;
-            color: #000060;
-            margin: 8px 0;
-        }
-
-        .contact-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            margin: 8px 0;
-            font-size: clamp(17px, 4.2vw, 21px);
-        }
-
-        .icon {
-            width: 22px;
-            height: 22px;
-            object-fit: contain;
-            vertical-align: middle;
-            flex-shrink: 0;
+        button,
+        input,
+        textarea {
+            font: inherit;
         }
 
         a {
-            color: #000060;
+            color: inherit;
             text-decoration: none;
+        }
+
+        ::selection {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .wrap {
+            width: min(1180px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .site-header {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
             transition:
-                color 0.25s ease,
-                transform 0.25s ease;
+                background 0.3s ease,
+                box-shadow 0.3s ease,
+                backdrop-filter 0.3s ease;
         }
 
-        a:hover {
-            color: #ff6600;
+        .site-header.scrolled {
+            background: rgba(251, 248, 238, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
         }
 
-        .contact-link {
+        .nav {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            position: relative;
+            z-index: 1002;
+        }
+
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .brand-copy {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .brand-name {
+            font-family: var(--serif);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--navy);
+        }
+
+        .brand-sub {
+            margin-top: 5px;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links > a:not(.nav-cta) {
+            position: relative;
+            font-size: 13px;
+            font-weight: 600;
+            color: #34333c;
+        }
+
+        .nav-links > a:not(.nav-cta)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 100%;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links > a:not(.nav-cta):hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-cta {
+            min-height: 44px;
+            padding: 0 21px;
+            border-radius: 999px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            background: var(--navy);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
-        .hover-effect {
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 96, 0.2);
+        }
+
+        .menu-button {
+            display: none;
+            width: 46px;
+            height: 46px;
+            border: 0;
+            background: transparent;
             cursor: pointer;
+            position: relative;
+            z-index: 1002;
         }
 
-        .hover-effect:hover {
-            transform: translateY(-2px) scale(1.03);
+        .menu-button span {
+            position: absolute;
+            left: 10px;
+            width: 26px;
+            height: 1.5px;
+            background: var(--navy);
+            transition: 0.3s ease;
         }
 
-        .social-icons {
-            margin: 18px 0 12px;
+        .menu-button span:nth-child(1) {
+            top: 17px;
+        }
+
+        .menu-button span:nth-child(2) {
+            top: 24px;
+        }
+
+        .menu-button.open span:nth-child(1) {
+            top: 21px;
+            transform: rotate(45deg);
+        }
+
+        .menu-button.open span:nth-child(2) {
+            top: 21px;
+            transform: rotate(-45deg);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 130px 0 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 560px;
+            height: 560px;
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(196, 164, 95, 0.17),
+                    rgba(196, 164, 95, 0) 67%
+                );
+            top: -160px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            margin-bottom: 26px;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.23em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 35px;
+            height: 1px;
+            background: currentColor;
+        }
+
+        .hero h1 {
+            margin: 0;
+            max-width: 720px;
+            font-family: var(--serif);
+            color: var(--navy);
+            font-size: clamp(58px, 7vw, 96px);
+            font-weight: 400;
+            line-height: 0.93;
+            letter-spacing: -0.055em;
+        }
+
+        .hero h1 em {
+            font-weight: 400;
+            color: var(--gold);
+        }
+
+        .hero-lead {
+            max-width: 570px;
+            margin: 28px 0 0;
+            color: #585761;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            margin-top: 36px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            min-height: 54px;
+            padding: 0 27px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .button-primary {
+            background: var(--navy);
+            color: var(--white);
+            box-shadow: 0 13px 35px rgba(0, 0, 96, 0.16);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(0, 0, 96, 0.23);
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(0, 0, 96, 0.18);
+            color: var(--navy);
+        }
+
+        .button-secondary:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .arrow {
+            font-size: 18px;
+            line-height: 1;
+            transition: transform 0.25s ease;
+        }
+
+        .button:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .hero-notes {
+            margin-top: 42px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+        }
+
+        .hero-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #77757d;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-note::before {
+            content: "✦";
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           HERO JEWEL VISUAL
+        ========================================================= */
+
+        .jewel-stage {
+            position: relative;
+            height: 570px;
+            display: grid;
+            place-items: center;
+            isolation: isolate;
+        }
+
+        .jewel-stage::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle at 40% 38%,
+                    #ffffff 0%,
+                    #f7f0dc 38%,
+                    #e9dec0 70%,
+                    #d9c99e 100%
+                );
+            box-shadow:
+                0 45px 100px rgba(72, 55, 16, 0.18),
+                inset 0 0 60px rgba(255, 255, 255, 0.8);
+            z-index: 0;
+        }
+
+        .jewel-stage::after {
+            content: "";
+            position: absolute;
+            width: 355px;
+            height: 70px;
+            border-radius: 50%;
+            bottom: 48px;
+            background: rgba(0, 0, 0, 0.08);
+            filter: blur(26px);
+            transform: scaleX(1.15);
+            z-index: -1;
+        }
+
+        /* Exact requested canvas */
+        #jewelCanvas {
+            pointer-events: none;
+        }
+
+        .ring-art {
+            width: 410px;
+            height: 410px;
+            position: relative;
+            z-index: 4;
+            animation: floatJewel 5.5s ease-in-out infinite;
+        }
+
+        @keyframes floatJewel {
+            0%, 100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(2deg);
+            }
+        }
+
+        .diamond {
+            position: absolute;
+            top: 52px;
+            left: 50%;
+            width: 122px;
+            height: 122px;
+            transform: translateX(-50%) rotate(45deg);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.95),
+                    rgba(230, 237, 255, 0.7) 38%,
+                    rgba(255, 255, 255, 0.98) 57%,
+                    rgba(191, 204, 236, 0.6)
+                );
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow:
+                inset 12px 12px 24px rgba(255,255,255,.8),
+                inset -10px -10px 22px rgba(83,107,174,.13),
+                0 15px 35px rgba(49, 61, 104, 0.18);
+        }
+
+        .diamond::before,
+        .diamond::after {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            border: 1px solid rgba(78, 96, 151, 0.19);
+        }
+
+        .diamond::after {
+            inset: 31px;
+            transform: rotate(45deg);
+        }
+
+        .prong {
+            position: absolute;
+            width: 16px;
+            height: 63px;
+            border-radius: 20px;
+            background:
+                linear-gradient(
+                    90deg,
+                    #d2b66f,
+                    #fff0bc,
+                    #9d7d36
+                );
+            top: 139px;
+            z-index: -1;
+        }
+
+        .prong.left {
+            left: 142px;
+            transform: rotate(-28deg);
+        }
+
+        .prong.right {
+            right: 142px;
+            transform: rotate(28deg);
+        }
+
+        .ring-band {
+            position: absolute;
+            left: 50%;
+            top: 177px;
+            width: 236px;
+            height: 183px;
+            transform: translateX(-50%);
+            border: 20px solid #c5a04d;
+            border-top-width: 18px;
+            border-radius: 50%;
+            box-shadow:
+                inset 4px 3px 5px rgba(255,255,255,.6),
+                inset -5px -3px 6px rgba(84,54,0,.22),
+                0 10px 20px rgba(102,76,24,.12);
+        }
+
+        .ring-band::before {
+            content: "";
+            position: absolute;
+            inset: -14px;
+            border: 5px solid rgba(255, 239, 184, 0.7);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .stage-label {
+            position: absolute;
+            right: 4px;
+            bottom: 56px;
+            z-index: 5;
+            padding: 14px 17px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,.8);
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0,0,0,.08);
+        }
+
+        .stage-label strong {
+            display: block;
+            color: var(--navy);
+            font-family: var(--serif);
+            font-size: 15px;
+        }
+
+        .stage-label span {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 9px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           MARQUEE
+        ========================================================= */
+
+        .marquee {
+            overflow: hidden;
+            background: var(--navy);
+            color: var(--white);
+            border-block: 1px solid rgba(255,255,255,.08);
+        }
+
+        .marquee-track {
+            width: max-content;
+            display: flex;
+            align-items: center;
+            animation: marqueeMove 26s linear infinite;
+        }
+
+        .marquee-item {
+            padding: 19px 28px;
+            white-space: nowrap;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .marquee-item::after {
+            content: "✦";
+            margin-left: 56px;
+            color: var(--gold-light);
+        }
+
+        @keyframes marqueeMove {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        section {
+            position: relative;
+        }
+
+        .section {
+            padding: 115px 0;
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 70px;
+            align-items: end;
+            margin-bottom: 52px;
+        }
+
+        .section-kicker {
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            margin: 0;
+            color: var(--navy);
+            font-family: var(--serif);
+            font-size: clamp(40px, 5vw, 68px);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+
+        .section-title em {
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        .section-copy {
+            max-width: 600px;
+            margin: 22px 0 0;
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+           COLLECTIONS
+        ========================================================= */
+
+        .collections {
+            background: var(--white);
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .collection-card {
+            min-height: 410px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-radius: 4px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #f8f4e9,
+                    #e9dfc7
+                );
+            isolation: isolate;
+            transition:
+                transform 0.4s cubic-bezier(.2,.8,.2,1),
+                box-shadow 0.4s ease;
+        }
+
+        .collection-card:nth-child(2) {
+            background:
+                linear-gradient(
+                    145deg,
+                    #0d0d1e,
+                    #000060
+                );
+            color: var(--white);
+        }
+
+        .collection-card:nth-child(3) {
+            background:
+                linear-gradient(
+                    145deg,
+                    #e9e9ee,
+                    #ffffff
+                );
+        }
+
+        .collection-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .collection-art {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .collection-card h3 {
+            margin: 0;
+            font-family: var(--serif);
+            font-size: 31px;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+        }
+
+        .collection-card p {
+            max-width: 275px;
+            margin: 10px 0 0;
+            color: #77747b;
+            line-height: 1.6;
+            font-size: 12px;
+        }
+
+        .collection-card:nth-child(2) p {
+            color: rgba(255,255,255,.7);
+        }
+
+        .card-link {
+            margin-top: 17px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.85;
+        }
+
+        .orb.one {
+            width: 260px;
+            height: 260px;
+            right: -60px;
+            top: -45px;
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #fff,
+                    #eee1b6 44%,
+                    #c5a45a 100%
+                );
+            box-shadow: -30px 35px 70px rgba(91, 67, 12, 0.17);
+        }
+
+        .orb.two {
+            width: 215px;
+            height: 215px;
+            right: 6px;
+            top: 15px;
+            background:
+                conic-gradient(
+                    from 35deg,
+                    #fff,
+                    #7790c4,
+                    #fff,
+                    #354d8b,
+                    #fff
+                );
+            clip-path: polygon(
+                50% 0%,
+                82% 18%,
+                100% 50%,
+                82% 82%,
+                50% 100%,
+                18% 82%,
+                0% 50%,
+                18% 18%
+            );
+            opacity: .8;
+            filter: drop-shadow(0 25px 40px rgba(0,0,0,.25));
+        }
+
+        .orb.three {
+            width: 250px;
+            height: 250px;
+            right: -45px;
+            top: -55px;
+            border: 17px solid #c6a45a;
+            background: transparent;
+            box-shadow:
+                inset 0 0 0 5px rgba(255,255,255,.5),
+                0 30px 50px rgba(72,53,13,.1);
+        }
+
+
+        /* =========================================================
+           CUSTOM PROCESS
+        ========================================================= */
+
+        .process {
+            background: var(--cream);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .process-step {
+            padding: 38px 28px 42px;
+            position: relative;
+            border-right: 1px solid var(--border);
+        }
+
+        .process-step:last-child {
+            border-right: 0;
+        }
+
+        .step-number {
+            display: block;
+            margin-bottom: 45px;
+            color: var(--gold);
+            font-family: var(--serif);
+            font-size: 14px;
+        }
+
+        .process-step h3 {
+            margin: 0;
+            color: var(--navy);
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .process-step p {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           DIAMONDS
+        ========================================================= */
+
+        .diamond-section {
+            background: var(--ink);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .diamond-section::before {
+            content: "";
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            right: -180px;
+            top: -170px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 50%;
+        }
+
+        .diamond-section::after {
+            content: "";
+            position: absolute;
+            width: 460px;
+            height: 460px;
+            right: -60px;
+            top: -50px;
+            border: 1px solid rgba(196,164,95,.16);
+            border-radius: 50%;
+        }
+
+        .diamond-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .diamond-section .section-title {
+            color: var(--white);
+        }
+
+        .diamond-section .section-copy {
+            color: rgba(255,255,255,.64);
+        }
+
+        .diamond-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .diamond-option {
+            min-height: 250px;
+            padding: 31px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(10px);
+            transition:
+                border-color .3s ease,
+                transform .3s ease,
+                background .3s ease;
+        }
+
+        .diamond-option:hover {
+            transform: translateY(-5px);
+            border-color: rgba(196,164,95,.65);
+            background: rgba(255,255,255,.055);
+        }
+
+        .diamond-option .mini-diamond {
+            width: 42px;
+            height: 42px;
+            transform: rotate(45deg);
+            border: 1px solid rgba(255,255,255,.45);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.7),
+                    rgba(87,109,163,.16)
+                );
+        }
+
+        .diamond-option h3 {
+            margin: 34px 0 8px;
+            font-family: var(--serif);
+            font-size: 29px;
+            font-weight: 400;
+        }
+
+        .diamond-option p {
+            margin: 0;
+            color: rgba(255,255,255,.55);
+            font-size: 12px;
+            line-height: 1.65;
+        }
+
+
+        /* =========================================================
+           CONTACT / CTA
+        ========================================================= */
+
+        .contact-section {
+            background: var(--white);
+        }
+
+        .contact-card {
+            position: relative;
+            overflow: hidden;
+            padding: 80px 60px;
+            background: var(--cream);
+            border: 1px solid rgba(196,164,95,.2);
+            text-align: center;
+        }
+
+        .contact-card::before,
+        .contact-card::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 1px solid rgba(196,164,95,.2);
+            transform: rotate(45deg);
+        }
+
+        .contact-card::before {
+            left: -155px;
+            top: -120px;
+        }
+
+        .contact-card::after {
+            right: -155px;
+            bottom: -120px;
+        }
+
+        .contact-card h2 {
+            margin: 0 auto;
+            max-width: 760px;
+            color: var(--navy);
+            font-family: var(--serif);
+            font-size: clamp(44px, 6vw, 76px);
+            font-weight: 400;
+            line-height: .98;
+            letter-spacing: -.045em;
+        }
+
+        .contact-card p {
+            max-width: 530px;
+            margin: 24px auto 0;
+            color: var(--muted);
+            line-height: 1.75;
+            font-size: 14px;
+        }
+
+        .contact-buttons {
+            margin-top: 34px;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact-details {
+            margin-top: 36px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px 32px;
+            font-size: 12px;
+            color: #66646d;
+        }
+
+        .contact-details a {
+            transition: color .25s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--navy);
+        }
+
+
+        /* =========================================================
+           GIA
+        ========================================================= */
+
+        .gia {
+            padding: 80px 0 95px;
+            background: var(--white);
+        }
+
+        .gia-head {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .gia-head h2 {
+            margin: 8px 0 0;
+            color: var(--navy);
+            font-family: var(--serif);
+            font-size: 39px;
+            font-weight: 400;
+        }
+
+        .gia-shell {
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 62px 0 30px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 50px;
+            align-items: center;
+            padding-bottom: 45px;
+            border-bottom: 1px solid rgba(255,255,255,.13);
+        }
+
+        .footer-brand {
+            display: flex;
             align-items: center;
             gap: 14px;
         }
 
-        .social-icons a {
-            display: inline-flex;
+        .footer-brand img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 24px;
+        }
+
+        .footer-brand span {
+            display: block;
+            margin-top: 5px;
+            color: rgba(255,255,255,.55);
+            font-size: 9px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .socials {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
+            gap: 8px;
+        }
+
+        .social {
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255,255,255,.18);
             border-radius: 50%;
+            display: grid;
+            place-items: center;
             transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background 0.3s ease;
+                background .25s ease,
+                transform .25s ease,
+                border-color .25s ease;
         }
 
-        .social-icons a:hover {
-            transform: translateY(-4px) scale(1.08);
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+        .social:hover {
+            background: var(--white);
+            border-color: var(--white);
+            transform: translateY(-3px);
         }
 
-        .social-icons img {
-            width: 30px;
-            height: 30px;
+        .social img {
+            width: 23px;
+            height: 23px;
             object-fit: contain;
         }
 
-        .shine-line {
-            width: 65%;
-            height: 1px;
-            margin: 14px auto;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(0, 0, 96, 0.25),
-                transparent
-            );
-            position: relative;
-            overflow: hidden;
+        .footer-bottom {
+            padding-top: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            color: rgba(255,255,255,.5);
+            font-size: 10px;
         }
 
-        .shine-line::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -40%;
-            width: 30%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            animation: lineShine 3s linear infinite;
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition:
+                opacity .75s ease,
+                transform .75s cubic-bezier(.2,.8,.2,1);
         }
 
-        @keyframes lineShine {
-            from {
-                left: -40%;
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 980px) {
+
+            .hero-grid,
+            .diamond-layout {
+                grid-template-columns: 1fr;
             }
 
-            to {
-                left: 110%;
+            .hero-grid {
+                gap: 35px;
+            }
+
+            .hero-copy {
+                text-align: center;
+            }
+
+            .eyebrow {
+                justify-content: center;
+            }
+
+            .hero-lead {
+                margin-inline: auto;
+            }
+
+            .hero-actions,
+            .hero-notes {
+                justify-content: center;
+            }
+
+            .jewel-stage {
+                height: 490px;
+            }
+
+            .section-head {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .collection-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-step:nth-child(2) {
+                border-right: 0;
+            }
+
+            .process-step:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
             }
         }
 
-        @media screen and (max-width: 480px) {
-            .container {
-                width: calc(100% - 10px);
-                margin: 5px;
-                padding: 18px 10px 15px;
+
+        @media (max-width: 760px) {
+
+            .wrap {
+                width: min(100% - 28px, 1180px);
             }
 
-            .logo {
-                width: 100px;
+            .nav {
+                min-height: 70px;
             }
 
-            .business-name {
-                font-size: 34px;
-            }
-
-            .description {
-                font-size: 17px;
-            }
-
-            .contact-info,
-            .contact-row {
-                font-size: 18px;
-            }
-
-            .icon {
-                width: 20px;
-                height: 20px;
-            }
-
-            .social-icons {
-                gap: 10px;
-            }
-
-            .social-icons a {
+            .brand-logo {
                 width: 40px;
                 height: 40px;
             }
 
-            .social-icons img {
-                width: 28px;
-                height: 28px;
+            .brand-name {
+                font-size: 19px;
+            }
+
+            .brand-sub {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                z-index: 1001;
+                inset: 0;
+                padding: 120px 28px 50px;
+                background: rgba(251, 248, 238, 0.98);
+                backdrop-filter: blur(18px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: stretch;
+                gap: 0;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition:
+                    opacity .3s ease,
+                    visibility .3s ease,
+                    transform .3s ease;
+            }
+
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-links > a:not(.nav-cta) {
+                padding: 18px 0;
+                border-bottom: 1px solid rgba(0,0,96,.09);
+                font-family: var(--serif);
+                font-size: 27px;
+                font-weight: 400;
+            }
+
+            .nav-cta {
+                margin-top: 25px;
+                min-height: 54px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 110px 0 55px;
+            }
+
+            .hero h1 {
+                font-size: clamp(52px, 16vw, 76px);
+            }
+
+            .hero-lead {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-actions .button {
+                width: min(100%, 330px);
+            }
+
+            .hero-notes {
+                gap: 12px 18px;
+            }
+
+            .jewel-stage {
+                height: 410px;
+                overflow: hidden;
+            }
+
+            .jewel-stage::before {
+                width: 340px;
+                height: 340px;
+            }
+
+            .ring-art {
+                transform: scale(.8);
+            }
+
+            @keyframes floatJewel {
+                0%, 100% {
+                    transform: scale(.8) translateY(0) rotate(-2deg);
+                }
+
+                50% {
+                    transform: scale(.8) translateY(-14px) rotate(2deg);
+                }
+            }
+
+            .stage-label {
+                right: 8px;
+                bottom: 32px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .collection-grid,
+            .diamond-options {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-card,
+            .collection-card:last-child {
+                grid-column: auto;
+                min-height: 360px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step,
+            .process-step:nth-child(2) {
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .process-step:last-child {
+                border-bottom: 0;
+            }
+
+            .step-number {
+                margin-bottom: 22px;
+            }
+
+            .contact-card {
+                padding: 60px 22px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .socials {
+                flex-wrap: wrap;
+            }
+
+            .footer-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
             }
         }
 
+
+        @media (max-width: 390px) {
+
+            .brand-name {
+                font-size: 17px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .jewel-stage {
+                margin-inline: -14px;
+            }
+
+            .stage-label {
+                display: none;
+            }
+        }
+
+
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
-                animation: none !important;
-                transition: none !important;
+                scroll-behavior: auto !important;
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
             }
         }
     </style>
+
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "JewelryStore",
+        "name": "Jewelers Truly",
+        "url": "https://jewelerstruly.com/",
+        "logo": "https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png",
+        "telephone": "+1-646-464-1935",
+        "email": "info@JewelersTruly.com",
+        "description": "Custom fine jewelry including engagement rings, eternity bands, tennis bracelets, necklaces and pendants with natural and lab-grown diamonds.",
+        "sameAs": [
+            "https://www.instagram.com/jewelers_truly/",
+            "https://www.linkedin.com/company/jewelers-truy/",
+            "https://www.tiktok.com/@jewelers_truly"
+        ]
+    }
+    </script>
 </head>
+
 
 <body>
 
-<div class="container">
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
 
-    <canvas
-        style="width: 352px; height: 292px; position: absolute; z-index: 2; left: 0px; top: 0px;"
-        width="704"
-        height="584">
-    </canvas>
+    <header class="site-header" id="siteHeader">
+        <div class="wrap nav">
 
-    <div class="content">
+            <a href="#top" class="brand" aria-label="Jewelers Truly home">
 
-        <img
-            src="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png"
-            alt="Jewelers Truly Logo"
-            class="logo"
-        >
+                <img
+                    class="brand-logo"
+                    src="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png"
+                    alt="Jewelers Truly"
+                >
 
-        <p class="business-name">
-            Jewelers Truly
-        </p>
+                <span class="brand-copy">
+                    <span class="brand-name">Jewelers Truly</span>
+                    <span class="brand-sub">Custom Fine Jewelry</span>
+                </span>
 
-        <div class="shine-line"></div>
+            </a>
 
-        <p class="description">
-            At Jewelers Truly, we manufacture and custom make:
-        </p>
 
-        <p class="description">
-            Engagement Rings, Eternity Bands, Tennis Bracelets,
-            Necklaces &amp; Pendants
-        </p>
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
 
-        <p class="description">
-            We carry both natural &amp; lab-grown diamonds.
-        </p>
 
-        <p class="contact-heading">
-            Contact us for more info
-        </p>
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
 
-        <div class="contact-links">
-
-            <div class="contact-row">
+                <a href="#collections">Collections</a>
+                <a href="#custom">Custom</a>
+                <a href="#diamonds">Diamonds</a>
+                <a href="#gia">Learn</a>
 
                 <a
-                    href="https://api.whatsapp.com/send/?phone=16464641935&text&type=phone_number&app_absent=0"
+                    href="https://api.whatsapp.com/send/?phone=16464641935"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="contact-link hover-effect"
-                    aria-label="Message Jewelers Truly on WhatsApp"
+                    class="nav-cta"
                 >
-                    <img
-                        src="https://secure-info.github.io/Moshe/logowhatsapp.png"
-                        alt="WhatsApp"
-                        class="icon"
-                    >
+                    Start a Piece
                 </a>
 
-                <a
-                    href="tel:+16464641935"
-                    class="hover-effect"
-                >
-                    +1 (646) 464-1935
-                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main id="top">
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+            <div class="wrap hero-grid">
+
+                <div class="hero-copy">
+
+                    <div class="eyebrow reveal">
+                        Custom Fine Jewelry
+                    </div>
+
+                    <h1 class="reveal">
+                        Made for you.<br>
+                        <em>Not everyone.</em>
+                    </h1>
+
+                    <p class="hero-lead reveal">
+                        Engagement rings, eternity bands, tennis bracelets,
+                        necklaces and custom pieces created around your taste —
+                        with your choice of natural or lab-grown diamonds.
+                    </p>
+
+
+                    <div class="hero-actions reveal">
+
+                        <a
+                            class="button button-primary"
+                            href="https://api.whatsapp.com/send/?phone=16464641935&text=Hi%20Jewelers%20Truly%2C%20I%27d%20like%20to%20discuss%20a%20custom%20piece."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Start a Custom Piece
+                            <span class="arrow">→</span>
+                        </a>
+
+                        <a
+                            class="button button-secondary"
+                            href="tel:+16464641935"
+                        >
+                            Call +1 (646) 464-1935
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-notes reveal">
+
+                        <span class="hero-note">
+                            Custom Made
+                        </span>
+
+                        <span class="hero-note">
+                            Natural Diamonds
+                        </span>
+
+                        <span class="hero-note">
+                            Lab-Grown Diamonds
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="jewel-stage reveal">
+
+                    <!-- Exact canvas dimensions requested -->
+                    <canvas
+                        id="jewelCanvas"
+                        style="width: 352px; height: 292px; position: absolute; z-index: 2; left: 0px; top: 0px;"
+                        width="704"
+                        height="584">
+                    </canvas>
+
+
+                    <div class="ring-art">
+
+                        <div class="diamond"></div>
+
+                        <div class="prong left"></div>
+                        <div class="prong right"></div>
+
+                        <div class="ring-band"></div>
+
+                    </div>
+
+
+                    <div class="stage-label">
+                        <strong>Designed around you.</strong>
+                        <span>Jewelers Truly</span>
+                    </div>
+
+                </div>
 
             </div>
 
-            <p class="contact-info">
-                <a
-                    href="mailto:info@JewelersTruly.com"
-                    class="contact-link hover-effect"
-                >
-                    <img
-                        src="https://secure-info.github.io/Moshe/logoemail.png"
-                        alt="Email"
-                        class="icon"
-                    >
+        </section>
 
-                    <span>
-                        info@JewelersTruly.com
-                    </span>
-                </a>
-            </p>
 
-            <div class="social-icons">
+        <!-- =====================================================
+             MOVING STRIP
+        ====================================================== -->
 
-                <a
-                    href="https://www.google.com/maps/place/Jewelers+Truly/@40.7574377,-73.9836783,703m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c258ff099c6aa9:0x6a7f56af9d62e636!8m2!3d40.7574377!4d-73.9811034!16s%2Fg%2F11y4036tsm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Jewelers Truly on Google Maps"
-                    title="Google Maps"
-                >
-                    <img
-                        src="https://secure-info.github.io/Moshe/logoaddress.png"
-                        alt="Google Maps"
-                    >
-                </a>
+        <div class="marquee" aria-hidden="true">
 
-                <a
-                    href="https://www.linkedin.com/company/jewelers-truy/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    title="LinkedIn"
-                >
-                    <img
-                        src="https://secure-info.github.io/Moshe/logolinkedin.png"
-                        alt="LinkedIn"
-                    >
-                </a>
+            <div class="marquee-track">
 
-                <a
-                    href="https://www.instagram.com/jewelers_truly/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    title="Instagram"
-                >
-                    <img
-                        src="https://secure-info.github.io/Moshe/logoinsta.png"
-                        alt="Instagram"
-                    >
-                </a>
+                <div class="marquee-item">Engagement Rings</div>
+                <div class="marquee-item">Eternity Bands</div>
+                <div class="marquee-item">Tennis Bracelets</div>
+                <div class="marquee-item">Natural Diamonds</div>
+                <div class="marquee-item">Lab-Grown Diamonds</div>
+                <div class="marquee-item">Custom Jewelry</div>
 
-                <a
-                    href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="TikTok"
-                    title="TikTok"
-                >
-                    <img
-                        src="https://secure-info.github.io/Moshe/logotiktak.png"
-                        alt="TikTok"
-                    >
-                </a>
+                <div class="marquee-item">Engagement Rings</div>
+                <div class="marquee-item">Eternity Bands</div>
+                <div class="marquee-item">Tennis Bracelets</div>
+                <div class="marquee-item">Natural Diamonds</div>
+                <div class="marquee-item">Lab-Grown Diamonds</div>
+                <div class="marquee-item">Custom Jewelry</div>
 
-            </div>
-
-            <div>
-                <script
-                    type="text/javascript"
-                    src="https://4cs.gia.edu/interactive-4cs/js/embed.js"
-                    charset="UTF-8">
-                </script>
             </div>
 
         </div>
 
-    </div>
 
-</div>
+        <!-- =====================================================
+             COLLECTIONS
+        ====================================================== -->
 
-<script>
-    /*
-        Get the exact canvas above
-    */
-    const canvas = document.querySelector('.container canvas');
-    const ctx = canvas.getContext('2d');
+        <section class="section collections" id="collections">
 
-    let particles = [];
+            <div class="wrap">
 
-    const particleCount = 30;
+                <div class="section-head">
 
-    function random(min, max) {
-        return Math.random() * (max - min) + min;
-    }
+                    <div class="section-kicker reveal">
+                        What We Create
+                    </div>
 
-    function createParticle() {
-        return {
-            x: random(0, 352),
-            y: random(0, 292),
-            size: random(1, 3.5),
-            speedX: random(-0.08, 0.08),
-            speedY: random(-0.18, -0.04),
-            alpha: random(0.2, 0.85),
-            pulseSpeed: random(0.01, 0.035),
-            direction: 1,
-            rotation: random(0, Math.PI * 2)
-        };
-    }
+                    <div>
 
-    function buildParticles() {
-        particles = [];
+                        <h2 class="section-title reveal">
+                            Pieces worth <em>remembering.</em>
+                        </h2>
 
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(createParticle());
+                        <p class="section-copy reveal">
+                            From a first sketch to the final polish, each piece
+                            begins with the person who will wear it.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="collection-grid">
+
+                    <article class="collection-card reveal">
+
+                        <div class="collection-art">
+                            <div class="orb one"></div>
+                        </div>
+
+                        <h3>Engagement & Eternity</h3>
+
+                        <p>
+                            Custom proportions, settings and stones built
+                            around the look you want.
+                        </p>
+
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=16464641935&text=Hi%2C%20I%27m%20interested%20in%20a%20custom%20ring."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="card-link"
+                        >
+                            Discuss a ring →
+                        </a>
+
+                    </article>
+
+
+                    <article class="collection-card reveal">
+
+                        <div class="collection-art">
+                            <div class="orb two"></div>
+                        </div>
+
+                        <h3>Tennis Jewelry</h3>
+
+                        <p>
+                            Bracelets and necklaces designed for brilliance,
+                            balance and everyday wear.
+                        </p>
+
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=16464641935&text=Hi%2C%20I%27m%20interested%20in%20tennis%20jewelry."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="card-link"
+                        >
+                            Start a piece →
+                        </a>
+
+                    </article>
+
+
+                    <article class="collection-card reveal">
+
+                        <div class="collection-art">
+                            <div class="orb three"></div>
+                        </div>
+
+                        <h3>Custom Jewelry</h3>
+
+                        <p>
+                            Bring an inspiration, an old piece or simply an idea.
+                            We build from there.
+                        </p>
+
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=16464641935&text=Hi%2C%20I%20have%20an%20idea%20for%20a%20custom%20piece."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="card-link"
+                        >
+                            Bring us your idea →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CUSTOM PROCESS
+        ====================================================== -->
+
+        <section class="section process" id="custom">
+
+            <div class="wrap">
+
+                <div class="section-head">
+
+                    <div class="section-kicker reveal">
+                        The Custom Process
+                    </div>
+
+                    <div>
+
+                        <h2 class="section-title reveal">
+                            From idea to <em>heirloom.</em>
+                        </h2>
+
+                        <p class="section-copy reveal">
+                            Custom jewelry should feel personal without feeling
+                            complicated. We keep the process clear from start
+                            to finish.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <article class="process-step reveal">
+
+                        <span class="step-number">01</span>
+
+                        <h3>Conversation</h3>
+
+                        <p>
+                            Tell us what you are looking for, your inspiration,
+                            preferences and budget.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-step reveal">
+
+                        <span class="step-number">02</span>
+
+                        <h3>Design</h3>
+
+                        <p>
+                            We refine the proportions, stone selection,
+                            materials and details of your piece.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-step reveal">
+
+                        <span class="step-number">03</span>
+
+                        <h3>Craft</h3>
+
+                        <p>
+                            Your design moves into production and is made
+                            specifically for you.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-step reveal">
+
+                        <span class="step-number">04</span>
+
+                        <h3>Final Piece</h3>
+
+                        <p>
+                            The finished jewelry is inspected, polished
+                            and prepared for delivery.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DIAMONDS
+        ====================================================== -->
+
+        <section class="section diamond-section" id="diamonds">
+
+            <div class="wrap diamond-layout">
+
+                <div>
+
+                    <div class="section-kicker reveal">
+                        Your Choice
+                    </div>
+
+                    <h2 class="section-title reveal">
+                        Natural or <em>lab-grown.</em>
+                    </h2>
+
+                    <p class="section-copy reveal">
+                        There is no single right choice. We work with both so
+                        your decision can be based on what matters to you:
+                        origin, budget, size, rarity or value.
+                    </p>
+
+                </div>
+
+
+                <div class="diamond-options">
+
+                    <article class="diamond-option reveal">
+
+                        <div class="mini-diamond"></div>
+
+                        <div>
+                            <h3>Natural</h3>
+
+                            <p>
+                                Formed in the earth and selected for the
+                                characteristics that matter most to your piece.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="diamond-option reveal">
+
+                        <div class="mini-diamond"></div>
+
+                        <div>
+                            <h3>Lab-Grown</h3>
+
+                            <p>
+                                Diamond material with flexibility to prioritize
+                                size, specifications and budget.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT CTA
+        ====================================================== -->
+
+        <section class="section contact-section">
+
+            <div class="wrap">
+
+                <div class="contact-card reveal">
+
+                    <div class="section-kicker">
+                        Begin Your Piece
+                    </div>
+
+                    <h2>
+                        Have an idea?<br>
+                        Show us.
+                    </h2>
+
+                    <p>
+                        Send a photo, sketch, inspiration or simply describe
+                        what you have in mind. We can take it from there.
+                    </p>
+
+
+                    <div class="contact-buttons">
+
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=16464641935&text=Hi%20Jewelers%20Truly%2C%20I%27d%20like%20to%20discuss%20a%20piece."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary"
+                        >
+                            Message on WhatsApp
+                            <span class="arrow">→</span>
+                        </a>
+
+                        <a
+                            href="mailto:info@JewelersTruly.com"
+                            class="button button-secondary"
+                        >
+                            Email Us
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-details">
+
+                        <a href="tel:+16464641935">
+                            +1 (646) 464-1935
+                        </a>
+
+                        <a href="mailto:info@JewelersTruly.com">
+                            info@JewelersTruly.com
+                        </a>
+
+                        <a
+                            href="https://www.google.com/maps/place/Jewelers+Truly/@40.7574377,-73.9836783,703m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c258ff099c6aa9:0x6a7f56af9d62e636!8m2!3d40.7574377!4d-73.9811034!16s%2Fg%2F11y4036tsm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Google Maps ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GIA 4Cs
+        ====================================================== -->
+
+        <section class="gia" id="gia">
+
+            <div class="wrap">
+
+                <div class="gia-head reveal">
+
+                    <div class="section-kicker">
+                        Diamond Education
+                    </div>
+
+                    <h2>Understand the 4Cs.</h2>
+
+                </div>
+
+
+                <div class="gia-shell reveal">
+
+                    <script
+                        type="text/javascript"
+                        src="https://4cs.gia.edu/interactive-4cs/js/embed.js"
+                        charset="UTF-8">
+                    </script>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="wrap">
+
+            <div class="footer-top">
+
+                <a href="#top" class="footer-brand">
+
+                    <img
+                        src="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png"
+                        alt="Jewelers Truly"
+                    >
+
+                    <div>
+                        <strong>Jewelers Truly</strong>
+                        <span>Custom Fine Jewelry</span>
+                    </div>
+
+                </a>
+
+
+                <div class="socials">
+
+                    <a
+                        class="social"
+                        href="https://www.google.com/maps/place/Jewelers+Truly/@40.7574377,-73.9836783,703m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c258ff099c6aa9:0x6a7f56af9d62e636!8m2!3d40.7574377!4d-73.9811034!16s%2Fg%2F11y4036tsm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Google Maps"
+                        title="Google Maps"
+                    >
+                        <img
+                            src="https://secure-info.github.io/Moshe/logoaddress.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <a
+                        class="social"
+                        href="https://www.linkedin.com/company/jewelers-truy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                    >
+                        <img
+                            src="https://secure-info.github.io/Moshe/logolinkedin.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <a
+                        class="social"
+                        href="https://www.instagram.com/jewelers_truly/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        title="Instagram"
+                    >
+                        <img
+                            src="https://secure-info.github.io/Moshe/logoinsta.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <a
+                        class="social"
+                        href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="TikTok"
+                        title="TikTok"
+                    >
+                        <img
+                            src="https://secure-info.github.io/Moshe/logotiktak.png"
+                            alt=""
+                        >
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © <span id="year"></span> Jewelers Truly.
+                    All rights reserved.
+                </span>
+
+                <span>
+                    Natural &amp; Lab-Grown Diamonds · Custom Fine Jewelry
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+        /* ---------------------------------------------------------
+           Current year
+        --------------------------------------------------------- */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        /* ---------------------------------------------------------
+           Header blur / elevation
+        --------------------------------------------------------- */
+
+        const header =
+            document.getElementById("siteHeader");
+
+        function updateHeader() {
+
+            if (window.scrollY > 20) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
         }
-    }
 
-    function drawSparkle(particle) {
-        ctx.save();
+        updateHeader();
 
-        /*
-            Canvas internal resolution is 704x584,
-            while CSS size is 352x292.
-            Scale by 2 for sharp rendering.
-        */
-        ctx.translate(
-            particle.x * 2,
-            particle.y * 2
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
         );
 
-        ctx.rotate(particle.rotation);
 
-        ctx.globalAlpha = particle.alpha;
+        /* ---------------------------------------------------------
+           Mobile navigation
+        --------------------------------------------------------- */
 
-        const size = particle.size * 2;
+        const menuButton =
+            document.getElementById("menuButton");
 
-        ctx.beginPath();
+        const navLinks =
+            document.getElementById("navLinks");
 
-        ctx.moveTo(0, -size * 2);
-        ctx.lineTo(size * 0.45, -size * 0.45);
+        function closeMenu() {
 
-        ctx.lineTo(size * 2, 0);
-        ctx.lineTo(size * 0.45, size * 0.45);
+            menuButton.classList.remove("open");
+            navLinks.classList.remove("open");
 
-        ctx.lineTo(0, size * 2);
-        ctx.lineTo(-size * 0.45, size * 0.45);
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-        ctx.lineTo(-size * 2, 0);
-        ctx.lineTo(-size * 0.45, -size * 0.45);
+            document.body.style.overflow = "";
 
-        ctx.closePath();
+        }
 
-        ctx.fillStyle = '#ffffff';
-        ctx.shadowBlur = 14;
-        ctx.shadowColor = '#ffffff';
+        menuButton.addEventListener(
+            "click",
+            () => {
 
-        ctx.fill();
+                const open =
+                    navLinks.classList.toggle("open");
 
-        ctx.restore();
-    }
+                menuButton.classList.toggle(
+                    "open",
+                    open
+                );
 
-    function animateCanvas() {
-        ctx.clearRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(open)
+                );
+
+                document.body.style.overflow =
+                    open ? "hidden" : "";
+
+            }
         );
 
-        particles.forEach(particle => {
 
-            particle.x += particle.speedX;
-            particle.y += particle.speedY;
+        navLinks
+            .querySelectorAll("a")
+            .forEach(link => {
 
-            particle.rotation += 0.002;
-
-            particle.alpha +=
-                particle.pulseSpeed *
-                particle.direction;
-
-            if (particle.alpha >= 0.9) {
-                particle.direction = -1;
-            }
-
-            if (particle.alpha <= 0.15) {
-                particle.direction = 1;
-            }
-
-            if (
-                particle.y < -10 ||
-                particle.x < -10 ||
-                particle.x > 362
-            ) {
-                particle.x = random(0, 352);
-                particle.y = 302;
-            }
-
-            drawSparkle(particle);
-        });
-
-        requestAnimationFrame(animateCanvas);
-    }
-
-    buildParticles();
-    animateCanvas();
-
-
-    /*
-        Click animation
-    */
-    document
-        .querySelectorAll('.hover-effect, .social-icons a')
-        .forEach(item => {
-
-            item.addEventListener('click', () => {
-
-                item.animate(
-                    [
-                        {
-                            transform: 'scale(1)'
-                        },
-                        {
-                            transform: 'scale(0.92)'
-                        },
-                        {
-                            transform: 'scale(1.06)'
-                        },
-                        {
-                            transform: 'scale(1)'
-                        }
-                    ],
-                    {
-                        duration: 300,
-                        easing: 'ease-out'
-                    }
+                link.addEventListener(
+                    "click",
+                    closeMenu
                 );
 
             });
 
-        });
+
+        /* ---------------------------------------------------------
+           Scroll reveal
+        --------------------------------------------------------- */
+
+        const reducedMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
 
 
-    /*
-        Subtle logo movement on desktop
-    */
-    const container = document.querySelector('.container');
-    const logo = document.querySelector('.logo');
+        if (!reducedMotion) {
 
-    container.addEventListener('mousemove', event => {
+            const observer =
+                new IntersectionObserver(
+                    entries => {
 
-        if (window.innerWidth < 768) {
-            return;
+                        entries.forEach(entry => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+                    {
+                        threshold: 0.13
+                    }
+                );
+
+
+            document
+                .querySelectorAll(".reveal")
+                .forEach((element, index) => {
+
+                    element.style.transitionDelay =
+                        `${Math.min(index % 4, 3) * 70}ms`;
+
+                    observer.observe(element);
+
+                });
+
+        } else {
+
+            document
+                .querySelectorAll(".reveal")
+                .forEach(element => {
+                    element.classList.add("visible");
+                });
+
         }
 
-        const rect =
-            container.getBoundingClientRect();
 
-        const x =
-            (
-                event.clientX -
-                rect.left -
-                rect.width / 2
-            ) / rect.width;
+        /* ---------------------------------------------------------
+           Canvas diamond sparkles
+        --------------------------------------------------------- */
 
-        const y =
-            (
-                event.clientY -
-                rect.top -
-                rect.height / 2
-            ) / rect.height;
+        const canvas =
+            document.getElementById("jewelCanvas");
 
-        logo.style.transform =
-            `translate(${x * 6}px, ${y * 4}px) scale(1.02)`;
-
-    });
-
-    container.addEventListener('mouseleave', () => {
-        logo.style.transform = '';
-    });
+        const ctx =
+            canvas.getContext("2d");
 
 
-    /*
-        Social icon entrance animation
-    */
-    const socialLinks =
-        document.querySelectorAll('.social-icons a');
+        const CSS_WIDTH = 352;
+        const CSS_HEIGHT = 292;
+        const SCALE = 2;
 
-    socialLinks.forEach((link, index) => {
+        const particles = [];
 
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(10px)';
+        const particleCount = 34;
 
-        setTimeout(() => {
 
-            link.style.transition =
-                'opacity 0.5s ease, transform 0.5s ease';
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
 
-            link.style.opacity = '1';
-            link.style.transform = 'translateY(0)';
 
-        }, 650 + index * 120);
+        function createParticle() {
 
-    });
-</script>
+            return {
+
+                x: random(8, CSS_WIDTH - 8),
+
+                y: random(8, CSS_HEIGHT - 8),
+
+                radius: random(0.7, 2.6),
+
+                alpha: random(0.1, 0.85),
+
+                pulse: random(0.006, 0.02),
+
+                direction:
+                    Math.random() > 0.5 ? 1 : -1,
+
+                driftX:
+                    random(-0.035, 0.035),
+
+                driftY:
+                    random(-0.06, -0.015),
+
+                rotation:
+                    random(0, Math.PI)
+
+            };
+
+        }
+
+
+        function buildParticles() {
+
+            particles.length = 0;
+
+            for (
+                let i = 0;
+                i < particleCount;
+                i++
+            ) {
+
+                particles.push(
+                    createParticle()
+                );
+
+            }
+
+        }
+
+
+        function drawSparkle(particle) {
+
+            ctx.save();
+
+            ctx.translate(
+                particle.x * SCALE,
+                particle.y * SCALE
+            );
+
+            ctx.rotate(
+                particle.rotation
+            );
+
+            ctx.globalAlpha =
+                particle.alpha;
+
+
+            const size =
+                particle.radius * SCALE;
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                0,
+                -size * 3
+            );
+
+            ctx.lineTo(
+                size * 0.42,
+                -size * 0.42
+            );
+
+            ctx.lineTo(
+                size * 3,
+                0
+            );
+
+            ctx.lineTo(
+                size * 0.42,
+                size * 0.42
+            );
+
+            ctx.lineTo(
+                0,
+                size * 3
+            );
+
+            ctx.lineTo(
+                -size * 0.42,
+                size * 0.42
+            );
+
+            ctx.lineTo(
+                -size * 3,
+                0
+            );
+
+            ctx.lineTo(
+                -size * 0.42,
+                -size * 0.42
+            );
+
+            ctx.closePath();
+
+
+            ctx.fillStyle =
+                "#ffffff";
+
+            ctx.shadowBlur =
+                13;
+
+            ctx.shadowColor =
+                "#ffffff";
+
+            ctx.fill();
+
+            ctx.restore();
+
+        }
+
+
+        function animateSparkles() {
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+
+            particles.forEach(
+                particle => {
+
+                    particle.x +=
+                        particle.driftX;
+
+                    particle.y +=
+                        particle.driftY;
+
+                    particle.rotation +=
+                        0.0015;
+
+
+                    particle.alpha +=
+                        particle.pulse *
+                        particle.direction;
+
+
+                    if (
+                        particle.alpha >= 0.9
+                    ) {
+
+                        particle.direction = -1;
+
+                    }
+
+
+                    if (
+                        particle.alpha <= 0.08
+                    ) {
+
+                        particle.direction = 1;
+
+                    }
+
+
+                    if (
+                        particle.y < -8 ||
+                        particle.x < -8 ||
+                        particle.x > CSS_WIDTH + 8
+                    ) {
+
+                        particle.x =
+                            random(
+                                10,
+                                CSS_WIDTH - 10
+                            );
+
+                        particle.y =
+                            CSS_HEIGHT + 7;
+
+                    }
+
+
+                    drawSparkle(
+                        particle
+                    );
+
+                }
+            );
+
+
+            requestAnimationFrame(
+                animateSparkles
+            );
+
+        }
+
+
+        buildParticles();
+
+
+        if (!reducedMotion) {
+
+            animateSparkles();
+
+        } else {
+
+            particles.forEach(
+                drawSparkle
+            );
+
+        }
+
+
+        /* ---------------------------------------------------------
+           Tiny desktop hero parallax
+        --------------------------------------------------------- */
+
+        const stage =
+            document.querySelector(
+                ".jewel-stage"
+            );
+
+        const ring =
+            document.querySelector(
+                ".ring-art"
+            );
+
+
+        if (
+            stage &&
+            ring &&
+            !reducedMotion
+        ) {
+
+            stage.addEventListener(
+                "mousemove",
+                event => {
+
+                    if (
+                        window.innerWidth < 900
+                    ) {
+                        return;
+                    }
+
+
+                    const rect =
+                        stage.getBoundingClientRect();
+
+
+                    const x =
+                        (
+                            event.clientX -
+                            rect.left -
+                            rect.width / 2
+                        ) /
+                        rect.width;
+
+
+                    const y =
+                        (
+                            event.clientY -
+                            rect.top -
+                            rect.height / 2
+                        ) /
+                        rect.height;
+
+
+                    ring.style.marginLeft =
+                        `${x * 10}px`;
+
+                    ring.style.marginTop =
+                        `${y * 8}px`;
+
+                }
+            );
+
+
+            stage.addEventListener(
+                "mouseleave",
+                () => {
+
+                    ring.style.marginLeft =
+                        "";
+
+                    ring.style.marginTop =
+                        "";
+
+                }
+            );
+
+        }
+    </script>
 
 </body>
 </html>
