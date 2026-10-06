@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,38 +14,63 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background: #ffffff;
             color: #000060;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
+            position: relative;
             width: calc(100% - 16px);
             max-width: 600px;
             margin: 8px auto;
-            padding: 18px 14px;
-            background-color: #fffbe6;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+            padding: 22px 14px 18px;
+            background: #fffbe6;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
             text-align: center;
-            animation: fadeIn 1s ease;
+            overflow: hidden;
+            animation: pageFade 0.9s ease forwards;
         }
 
-        @keyframes fadeIn {
+        @keyframes pageFade {
             from {
                 opacity: 0;
+                transform: translateY(10px);
             }
 
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
+        }
+
+        /* Animated canvas */
+        #sparkleCanvas {
+            width: 352px;
+            height: 292px;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
         }
 
         .logo {
@@ -52,22 +78,28 @@
             max-width: 35%;
             height: auto;
             margin-bottom: 4px;
-            animation: bounce 0.5s ease forwards;
-            transition: transform 0.3s, opacity 0.3s;
+            animation: logoDrop 0.8s ease forwards;
+            transition: transform 0.35s ease, opacity 0.35s ease;
         }
 
         .logo:hover {
-            transform: scale(1.05);
-            opacity: 0.85;
+            transform: scale(1.06) rotate(-1deg);
+            opacity: 0.9;
         }
 
-        @keyframes bounce {
+        @keyframes logoDrop {
             0% {
-                transform: translateY(-10px);
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+
+            70% {
+                transform: translateY(3px) scale(1.02);
             }
 
             100% {
-                transform: translateY(0);
+                opacity: 1;
+                transform: translateY(0) scale(1);
             }
         }
 
@@ -77,18 +109,59 @@
             font-weight: 700;
             color: #000060;
             margin: 5px 0 14px;
+            animation: titleReveal 0.9s ease forwards;
+        }
+
+        @keyframes titleReveal {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+                letter-spacing: 4px;
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                letter-spacing: normal;
+            }
         }
 
         .description {
             font-size: clamp(16px, 4vw, 19px);
-            line-height: 1.4;
+            line-height: 1.45;
             margin: 5px 0;
+            opacity: 0;
+            animation: textFade 0.7s ease forwards;
+        }
+
+        .description:nth-of-type(2) {
+            animation-delay: 0.15s;
+        }
+
+        .description:nth-of-type(3) {
+            animation-delay: 0.30s;
+        }
+
+        .description:nth-of-type(4) {
+            animation-delay: 0.45s;
+        }
+
+        @keyframes textFade {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .contact-heading {
             font-size: clamp(17px, 4vw, 20px);
             font-weight: 600;
-            margin: 14px 0 8px;
+            margin: 15px 0 9px;
         }
 
         .contact-info {
@@ -118,12 +191,14 @@
         a {
             color: #000060;
             text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease,
+                opacity 0.25s ease;
         }
 
         a:hover {
             color: #ff6600;
-            text-decoration: underline;
         }
 
         .contact-link {
@@ -131,6 +206,14 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
+        }
+
+        .hover-effect {
+            cursor: pointer;
+        }
+
+        .hover-effect:hover {
+            transform: translateY(-2px) scale(1.03);
         }
 
         .social-icons {
@@ -145,33 +228,72 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-4px) scale(1.08);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
         }
 
         .social-icons img {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             object-fit: contain;
-            transition: transform 0.3s;
         }
 
-        .social-icons img:hover {
-            transform: scale(1.12);
+        .shine-line {
+            width: 65%;
+            height: 1px;
+            margin: 14px auto;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0, 0, 96, 0.25),
+                transparent
+            );
+            position: relative;
+            overflow: hidden;
         }
 
-        .hover-effect {
-            transition: transform 0.3s, color 0.3s;
-            cursor: pointer;
+        .shine-line::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -40%;
+            width: 30%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            animation: lineShine 3s linear infinite;
         }
 
-        .hover-effect:hover {
-            transform: scale(1.03);
+        @keyframes lineShine {
+            0% {
+                left: -40%;
+            }
+
+            100% {
+                left: 110%;
+            }
         }
 
         @media screen and (max-width: 480px) {
             .container {
                 width: calc(100% - 10px);
                 margin: 5px;
-                padding: 15px 10px;
+                padding: 18px 10px 15px;
+            }
+
+            #sparkleCanvas {
+                width: 100%;
+                height: 250px;
             }
 
             .logo {
@@ -196,9 +318,27 @@
                 height: 20px;
             }
 
+            .social-icons {
+                gap: 10px;
+            }
+
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+            }
+
             .social-icons img {
-                width: 30px;
-                height: 30px;
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
             }
         }
     </style>
@@ -208,156 +348,384 @@
 
 <div class="container">
 
-    <img
-        src="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png"
-        alt="Jewelers Truly Logo"
-        class="logo"
-    >
+    <canvas id="sparkleCanvas" width="704" height="584"></canvas>
 
-    <p class="business-name">Jewelers Truly</p>
+    <div class="content">
 
-    <p class="description">
-        At Jewelers Truly, we design and create:
-    </p>
+        <img
+            src="https://secure-info.github.io/Moshe/Logo-7-8-24-TransparentJT.png"
+            alt="Jewelers Truly Logo"
+            class="logo"
+        >
 
-    <p class="description">
-        Engagement Rings, Eternity Bands, Tennis Bracelets, Necklaces & More
-    </p>
+        <p class="business-name">Jewelers Truly</p>
 
-    <p class="description">
-        We carry both natural &amp; lab-grown diamonds.
-    </p>
+        <div class="shine-line"></div>
 
-    <p class="contact-heading">
-        Contact us for more info
-    </p>
-
-    <div class="contact-links">
-
-        <!-- WhatsApp + Phone -->
-        <div class="contact-row">
-
-            <a
-                href="https://api.whatsapp.com/send/?phone=16464641935&text&type=phone_number&app_absent=0"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-link hover-effect"
-                aria-label="Message Jewelers Truly on WhatsApp"
-            >
-                <img
-                    src="https://secure-info.github.io/Moshe/logowhatsapp.png"
-                    alt="WhatsApp"
-                    class="icon"
-                >
-            </a>
-
-            <a
-                href="tel:+16464641935"
-                class="hover-effect"
-            >
-                +1 (646) 464-1935
-            </a>
-
-        </div>
-
-        <!-- Email -->
-        <p class="contact-info">
-
-            <a
-                href="mailto:info@JewelersTruly.com"
-                class="contact-link hover-effect"
-            >
-                <img
-                    src="https://secure-info.github.io/Moshe/logoemail.png"
-                    alt="Email"
-                    class="icon"
-                >
-
-                <span>info@JewelersTruly.com</span>
-            </a>
-
+        <p class="description">
+            At Jewelers Truly, we manufacture and custom make:
         </p>
 
-        <!-- Google Maps + Social Media -->
-        <div class="social-icons">
+        <p class="description">
+            Engagement Rings, Eternity Bands, Tennis Bracelets,
+            Necklaces &amp; Pendants
+        </p>
 
-            <!-- Google Maps -->
-            <a
-                href="https://www.google.com/maps/place/Jewelers+Truly/@40.7574377,-73.9836783,703m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c258ff099c6aa9:0x6a7f56af9d62e636!8m2!3d40.7574377!4d-73.9811034!16s%2Fg%2F11y4036tsm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Jewelers Truly on Google Maps"
-            >
-                <img
-                    src="https://secure-info.github.io/Moshe/logoaddress.png"
-                    alt="Google Maps"
+        <p class="description">
+            We carry both natural &amp; lab-grown diamonds.
+        </p>
+
+        <p class="contact-heading">
+            Contact us for more info
+        </p>
+
+        <div class="contact-links">
+
+            <!-- WhatsApp + Phone -->
+            <div class="contact-row">
+
+                <a
+                    href="https://api.whatsapp.com/send/?phone=16464641935&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link hover-effect"
+                    aria-label="Message Jewelers Truly on WhatsApp"
                 >
-            </a>
+                    <img
+                        src="https://secure-info.github.io/Moshe/logowhatsapp.png"
+                        alt="WhatsApp"
+                        class="icon"
+                    >
+                </a>
 
-            <!-- LinkedIn -->
-            <a
-                href="https://www.linkedin.com/company/jewelers-truy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-            >
-                <img
-                    src="https://secure-info.github.io/Moshe/logolinkedin.png"
-                    alt="LinkedIn"
+                <a
+                    href="tel:+16464641935"
+                    class="hover-effect"
                 >
-            </a>
+                    +1 (646) 464-1935
+                </a>
 
-            <!-- Instagram -->
-            <a
-                href="https://www.instagram.com/jewelers_truly/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-            >
-                <img
-                    src="https://secure-info.github.io/Moshe/logoinsta.png"
-                    alt="Instagram"
+            </div>
+
+            <!-- Email -->
+            <p class="contact-info">
+                <a
+                    href="mailto:info@JewelersTruly.com"
+                    class="contact-link hover-effect"
                 >
-            </a>
+                    <img
+                        src="https://secure-info.github.io/Moshe/logoemail.png"
+                        alt="Email"
+                        class="icon"
+                    >
 
-            <!-- TikTok -->
-            <a
-                href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok"
-            >
-                <img
-                    src="https://secure-info.github.io/Moshe/logotiktak.png"
-                    alt="TikTok"
+                    <span>info@JewelersTruly.com</span>
+                </a>
+            </p>
+
+            <!-- Google Maps + Social Media -->
+            <div class="social-icons">
+
+                <!-- Google Maps -->
+                <a
+                    href="https://www.google.com/maps/place/Jewelers+Truly/@40.7574377,-73.9836783,703m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c258ff099c6aa9:0x6a7f56af9d62e636!8m2!3d40.7574377!4d-73.9811034!16s%2Fg%2F11y4036tsm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Jewelers Truly on Google Maps"
+                    title="Google Maps"
                 >
-            </a>
+                    <img
+                        src="https://secure-info.github.io/Moshe/logoaddress.png"
+                        alt="Google Maps"
+                    >
+                </a>
 
-        </div>
+                <!-- LinkedIn -->
+                <a
+                    href="https://www.linkedin.com/company/jewelers-truy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    title="LinkedIn"
+                >
+                    <img
+                        src="https://secure-info.github.io/Moshe/logolinkedin.png"
+                        alt="LinkedIn"
+                    >
+                </a>
 
-        <!-- GIA 4Cs -->
-        <div>
-            <script
-                type="text/javascript"
-                src="https://4cs.gia.edu/interactive-4cs/js/embed.js"
-                charset="UTF-8">
-            </script>
+                <!-- Instagram -->
+                <a
+                    href="https://www.instagram.com/jewelers_truly/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    title="Instagram"
+                >
+                    <img
+                        src="https://secure-info.github.io/Moshe/logoinsta.png"
+                        alt="Instagram"
+                    >
+                </a>
+
+                <!-- TikTok -->
+                <a
+                    href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                    title="TikTok"
+                >
+                    <img
+                        src="https://secure-info.github.io/Moshe/logotiktak.png"
+                        alt="TikTok"
+                    >
+                </a>
+
+            </div>
+
+            <!-- GIA 4Cs -->
+            <div>
+                <script
+                    type="text/javascript"
+                    src="https://4cs.gia.edu/interactive-4cs/js/embed.js"
+                    charset="UTF-8">
+                </script>
+            </div>
+
         </div>
 
     </div>
+
 </div>
 
 <script>
-    document.querySelectorAll('.hover-effect').forEach(item => {
+    /*
+        CLICK ANIMATIONS
+    */
+    document.querySelectorAll('.hover-effect, .social-icons a').forEach(item => {
         item.addEventListener('click', () => {
-            item.style.transform = 'scale(1.05)';
-
-            setTimeout(() => {
-                item.style.transform = '';
-            }, 200);
+            item.animate(
+                [
+                    { transform: 'scale(1)' },
+                    { transform: 'scale(0.92)' },
+                    { transform: 'scale(1.06)' },
+                    { transform: 'scale(1)' }
+                ],
+                {
+                    duration: 300,
+                    easing: 'ease-out'
+                }
+            );
         });
+    });
+
+
+    /*
+        SCROLL / MOUSE PARALLAX
+    */
+    const container = document.querySelector('.container');
+    const logo = document.querySelector('.logo');
+
+    container.addEventListener('mousemove', (event) => {
+        if (window.innerWidth < 768) return;
+
+        const rect = container.getBoundingClientRect();
+
+        const x =
+            (event.clientX - rect.left - rect.width / 2) /
+            rect.width;
+
+        const y =
+            (event.clientY - rect.top - rect.height / 2) /
+            rect.height;
+
+        logo.style.transform =
+            `translate(${x * 6}px, ${y * 4}px) scale(1.02)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        logo.style.transform = '';
+    });
+
+
+    /*
+        CANVAS SPARKLE ANIMATION
+    */
+    const canvas = document.getElementById('sparkleCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+
+    const particleCount = 28;
+
+    function resizeCanvas() {
+        const dpr = window.devicePixelRatio || 1;
+
+        const displayWidth = canvas.clientWidth;
+        const displayHeight = canvas.clientHeight;
+
+        canvas.width = displayWidth * dpr;
+        canvas.height = displayHeight * dpr;
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function createParticle() {
+        return {
+            x: random(0, canvas.clientWidth),
+            y: random(0, canvas.clientHeight),
+            size: random(1, 3.5),
+            speedY: random(-0.18, -0.04),
+            speedX: random(-0.08, 0.08),
+            alpha: random(0.2, 0.8),
+            pulse: random(0.01, 0.035),
+            pulseDirection: 1,
+            rotation: random(0, Math.PI * 2)
+        };
+    }
+
+    function buildParticles() {
+        particles = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(createParticle());
+        }
+    }
+
+    function drawSparkle(particle) {
+        ctx.save();
+
+        ctx.translate(particle.x, particle.y);
+        ctx.rotate(particle.rotation);
+
+        ctx.globalAlpha = particle.alpha;
+
+        const size = particle.size;
+
+        ctx.beginPath();
+        ctx.moveTo(0, -size * 2);
+        ctx.lineTo(size * 0.45, -size * 0.45);
+        ctx.lineTo(size * 2, 0);
+        ctx.lineTo(size * 0.45, size * 0.45);
+        ctx.lineTo(0, size * 2);
+        ctx.lineTo(-size * 0.45, size * 0.45);
+        ctx.lineTo(-size * 2, 0);
+        ctx.lineTo(-size * 0.45, -size * 0.45);
+        ctx.closePath();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#ffffff';
+
+        ctx.fill();
+
+        ctx.restore();
+    }
+
+    function animateCanvas() {
+        ctx.clearRect(
+            0,
+            0,
+            canvas.clientWidth,
+            canvas.clientHeight
+        );
+
+        particles.forEach((particle) => {
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+            particle.rotation += 0.002;
+
+            particle.alpha +=
+                particle.pulse * particle.pulseDirection;
+
+            if (particle.alpha > 0.9) {
+                particle.pulseDirection = -1;
+            }
+
+            if (particle.alpha < 0.15) {
+                particle.pulseDirection = 1;
+            }
+
+            if (
+                particle.y < -10 ||
+                particle.x < -10 ||
+                particle.x > canvas.clientWidth + 10
+            ) {
+                particle.x = random(0, canvas.clientWidth);
+                particle.y = canvas.clientHeight + 10;
+            }
+
+            drawSparkle(particle);
+        });
+
+        requestAnimationFrame(animateCanvas);
+    }
+
+    resizeCanvas();
+    buildParticles();
+    animateCanvas();
+
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        buildParticles();
+    });
+
+
+    /*
+        SOCIAL ICON ENTRY ANIMATION
+    */
+    const socialLinks =
+        document.querySelectorAll('.social-icons a');
+
+    socialLinks.forEach((link, index) => {
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(10px)';
+
+        setTimeout(() => {
+            link.style.transition =
+                'opacity 0.5s ease, transform 0.5s ease';
+
+            link.style.opacity = '1';
+            link.style.transform = 'translateY(0)';
+        }, 600 + index * 120);
+    });
+
+
+    /*
+        CONTACT INFO ENTRY ANIMATION
+    */
+    const contactRows = document.querySelectorAll(
+        '.contact-row, .contact-info'
+    );
+
+    contactRows.forEach((row, index) => {
+        row.style.opacity = '0';
+
+        setTimeout(() => {
+            row.style.transition =
+                'opacity 0.55s ease, transform 0.55s ease';
+
+            row.style.opacity = '1';
+
+            row.animate(
+                [
+                    { transform: 'translateY(8px)' },
+                    { transform: 'translateY(0)' }
+                ],
+                {
+                    duration: 500,
+                    easing: 'ease-out'
+                }
+            );
+        }, 400 + index * 150);
     });
 </script>
 
 </body>
 </html>
+```
