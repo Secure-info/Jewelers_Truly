@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Jewelers Truly</title>
+
     <link rel="icon" type="image/png" href="Just logo.svg">
 
     <style>
@@ -39,6 +41,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -62,6 +65,7 @@
             0% {
                 transform: translateY(-10px);
             }
+
             100% {
                 transform: translateY(0);
             }
@@ -98,7 +102,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             margin: 8px 0;
             font-size: clamp(17px, 4.2vw, 21px);
         }
@@ -139,6 +143,8 @@
 
         .social-icons a {
             display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .social-icons img {
@@ -161,7 +167,6 @@
             transform: scale(1.03);
         }
 
-        /* Mobile */
         @media screen and (max-width: 480px) {
             .container {
                 width: calc(100% - 10px);
@@ -232,6 +237,7 @@
 
         <!-- WhatsApp + Phone -->
         <div class="contact-row">
+
             <a
                 href="https://api.whatsapp.com/send/?phone=16464641935&text&type=phone_number&app_absent=0"
                 target="_blank"
@@ -252,29 +258,12 @@
             >
                 +1 (646) 464-1935
             </a>
+
         </div>
-
-
-        <!-- Google Maps Address -->
-        <p class="contact-info">
-            <a
-                href="https://www.google.com/maps/search/?api=1&query=58+W+47th+Street+New+York+NY"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-link hover-effect"
-            >
-                <img
-                    src="https://secure-info.github.io/Moshe/logoaddress.png"
-                    alt="Map"
-                    class="icon"
-                >
-                <span>58 W 47th Street, New York, NY</span>
-            </a>
-        </p>
-
 
         <!-- Email -->
         <p class="contact-info">
+
             <a
                 href="mailto:info@JewelersTruly.com"
                 class="contact-link hover-effect"
@@ -284,14 +273,29 @@
                     alt="Email"
                     class="icon"
                 >
+
                 <span>info@JewelersTruly.com</span>
             </a>
+
         </p>
 
-
-        <!-- Social Media -->
+        <!-- Google Maps + Social Media -->
         <div class="social-icons">
 
+            <!-- Google Maps -->
+            <a
+                href="https://www.google.com/maps/place/Jewelers+Truly/@40.7574377,-73.9836783,703m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c258ff099c6aa9:0x6a7f56af9d62e636!8m2!3d40.7574377!4d-73.9811034!16s%2Fg%2F11y4036tsm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Jewelers Truly on Google Maps"
+            >
+                <img
+                    src="https://secure-info.github.io/Moshe/logoaddress.png"
+                    alt="Google Maps"
+                >
+            </a>
+
+            <!-- LinkedIn -->
             <a
                 href="https://www.linkedin.com/company/jewelers-truy/"
                 target="_blank"
@@ -304,6 +308,7 @@
                 >
             </a>
 
+            <!-- Instagram -->
             <a
                 href="https://www.instagram.com/jewelers_truly/"
                 target="_blank"
@@ -316,6 +321,7 @@
                 >
             </a>
 
+            <!-- TikTok -->
             <a
                 href="https://www.tiktok.com/@jewelers_truly?_t=8n0ifSYprnb&_r=1"
                 target="_blank"
@@ -329,7 +335,6 @@
             </a>
 
         </div>
-
 
         <!-- GIA 4Cs -->
         <div>
